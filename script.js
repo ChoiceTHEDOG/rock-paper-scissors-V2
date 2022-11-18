@@ -18,44 +18,51 @@ function getPlayerChoice(selection) {
 }
 // console.log(getPlayerChoice())
 
-function decideWinner(playerChoice, computerChoice) {
-    playerChoice = getPlayerChoice();
-    computerChoice = getComputerChoice();    
-    if(playerChoice == computerChoice) {
+
+function playSingleRound(playerSelection, computerSelectio) {
+    playerSelection = getPlayerChoice();
+    computerSelection = getComputerChoice();    
+    if(playerSelection == computerSelection) {
         return "Its a Tie"
-    } else if(playerChoice == "rock" && computerChoice == "scissors") {
+    } else if(playerSelection == "rock" && computerSelection == "scissors") {
+        playerScore =+ 1;
         return "You Win!!! Rock beats Scissors"
-    } else if(playerChoice == "rock" && computerChoice == "paper") {
+    } else if(playerSelection == "rock" && computerSelection == "paper") {
+        computerScore =+ 1;
         return "Ther computer Wins :(. Paper beats Rock"
-    } else if(playerChoice == "paper" && computerChoice == "rock") {
+    } else if(playerSelection == "paper" && computerSelection == "rock") {
+        playerScore =+ 1;
         return "You Win!!! Paper beats Rock"
-    } else if(playerChoice == "paper" && computerChoice == "scissors") {
+    } else if(playerSelection == "paper" && computerSelection == "scissors") {
+        computerScore =+ 1
         return "Ther computer Wins :(. Scissors beats paper"
-    } else if(playerChoice == "scissors" && computerChoice == "paper") {
+    } else if(playerSelection == "scissors" && computerSelection == "paper") {
+        playerScore =+ 1;
         return "You Win!!! Scissors beats Paper"
-    } else if(playerChoice == "scissors" && computerChoice == "rock") {
+    } else if(playerSelection == "scissors" && computerSelection == "rock") {
+        computerScore =+ 1;
         return "Ther computer Wins :(. Scissors beats paper"
     } else {
         return "invalid selection"
     }
+    numForSelection= Math.floor(Math.random() * 100) + 1;
 }
-console.log(decideWinner())
+// console.log(playplaySingleRound())
 
 
+let playerScore = 0;
+let computerScore = 0;
 
-
-
-
-
-
-
-
-
-
-
-// function playOneRound(computerChoice, playerChoice) {
-//     computerChoice = getComputerChoice
-//     playerChoice = getPlayerChoice
-// }
-// console.log(playOneRound())
-numForSelection= Math.floor(Math.random() * 100) + 1;
+function game(){
+    for (let i = 0; i < 5 ; i++) {
+        playSingleRound()
+     }
+     if(playerScore > computerScore){
+        alert("The Player wins whit " + playerScore + " points!!!");
+       } else if (playerScore < computerScore) {
+        alert("The Computer wins whit " + computerScore + " points!!!");
+       } else {
+        alert("Its a Tie")
+       }
+}
+console.log(game())

@@ -34,19 +34,19 @@ function playSingleRound(playerSelection, computerSelectio) {
         return "You Win!!! Rock beats Scissors"
     } else if(playerSelection == "rock" && computerSelection == "paper") {
         computerScore =+ 1;
-        return "Ther computer Wins :(. Paper beats Rock"
+        return "The computer Wins :(. Paper beats Rock"
     } else if(playerSelection == "paper" && computerSelection == "rock") {
         playerScore =+ 1;
         return "You Win!!! Paper beats Rock"
     } else if(playerSelection == "paper" && computerSelection == "scissors") {
         computerScore =+ 1
-        return "Ther computer Wins :(. Scissors beats paper"
+        return "The computer Wins :(. Scissors beats paper"
     } else if(playerSelection == "scissors" && computerSelection == "paper") {
         playerScore =+ 1;
         return "You Win!!! Scissors beats Paper"
     } else if(playerSelection == "scissors" && computerSelection == "rock") {
         computerScore =+ 1;
-        return "Ther computer Wins :(. Scissors beats paper"
+        return "The computer Wins :(. Scissors beats paper"
     } else {
         return "invalid selection"
     }

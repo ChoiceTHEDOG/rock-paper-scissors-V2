@@ -3,21 +3,26 @@ let playerScore = 0;
 let computerScore = 0;
 let gamesPlayed = 0
 
+// Here we get the computer choice using a random number generator 
+
 function getComputerChoice() {
     if(numForSelection >= 1 && numForSelection <= 33) {
         return "rock"
-    } else if (numForSelection >= 34 && numForSelection <= 66) {
+    } else if (numForSelection >= 34 && numForSelection <= 66) {    
         return "paper"
-    } else {
+    } else {                            
         return "scissors"
     }
 }
+
+// Ask the user for his choice 
 
 function getPlayerChoice(selection) {
     selection = prompt("Whats your choice?")
     return selection.toLowerCase();
 }
 
+// Single round logic
 
 function playSingleRound(playerSelection, computerSelectio) {
     playerSelection = getPlayerChoice();
@@ -53,7 +58,6 @@ numForSelection= Math.floor(Math.random() * 100) + 1;
 function game(){
     do {
         playSingleRound();
-        numForSelection= Math.floor(Math.random() * 100) + 1;
         gamesPlayed = gamesPlayed + 1;
     } while (gamesPlayed < 5);
     if(playerScore > computerScore){

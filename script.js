@@ -1,4 +1,7 @@
 let numForSelection= Math.floor(Math.random() * 100) + 1;
+let playerScore = 0;
+let computerScore = 0;
+let gamesPlayed = 0
 
 function getComputerChoice() {
     if(numForSelection >= 1 && numForSelection <= 33) {
@@ -9,13 +12,11 @@ function getComputerChoice() {
         return "scissors"
     }
 }
-console.log("la computadora elige " + getComputerChoice())
 
 function getPlayerChoice(selection) {
     selection = prompt("Whats your choice?")
     return selection.toLowerCase();
 }
-// console.log(getPlayerChoice())
 
 
 function playSingleRound(playerSelection, computerSelectio) {
@@ -46,41 +47,21 @@ function playSingleRound(playerSelection, computerSelectio) {
     }
 
 }
-// console.log(playplaySingleRound())
 
 numForSelection= Math.floor(Math.random() * 100) + 1;
 
-let playerScore = 0;
-let computerScore = 0;
-let gamesPlayed = 0
-
 function game(){
-
     do {
         playSingleRound();
         numForSelection= Math.floor(Math.random() * 100) + 1;
         gamesPlayed = gamesPlayed + 1;
     } while (gamesPlayed < 5);
     if(playerScore > computerScore){
-        alert("The Player wins whit " + playerScore + " points!!!");
+        return "The Player wins whit " + playerScore + " points!!!";
        } else if (playerScore < computerScore) {
-        alert("The Computer wins whit " + computerScore + " points!!!");
+        return "The Computer wins whit " + computerScore + " points!!!";
        } else {
-        alert("Its a Tie")
+        return "Its a Tie"
        }
 }
 console.log(game())
-
-// function game(){
-//     for (let i = 0; i < 5 ; i++) {
-//         playSingleRound()
-//      }
-//      if(playerScore > computerScore){
-//         alert("The Player wins whit " + playerScore + " points!!!");
-//        } else if (playerScore < computerScore) {
-//         alert("The Computer wins whit " + computerScore + " points!!!");
-//        } else {
-//         alert("Its a Tie")
-//        }
-// }
-// console.log(game())

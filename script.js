@@ -47,10 +47,8 @@ function playRound(playerSelection, computerSelection = ComputerChoice()) {
     } else {
         console.log( "invalid selection")
     }
-
+    numForSelection= Math.floor(Math.random() * 100) + 1;
 }
-
-numForSelection= Math.floor(Math.random() * 100) + 1;
 
 // function game(){
 //     do {
@@ -85,13 +83,9 @@ const scissors = document.createElement("button");
 scissors.textContent = "SCISSORS";
 scissors.addEventListener("click", () => {playRound("scissors")});
 
+const displayDiv = document.createElement("div");
+
+mainContainer.appendChild(displayDiv);
 mainContainer.appendChild(rock);
 mainContainer.appendChild(paper);
 mainContainer.appendChild(scissors);
-
-// function test(){
-//     alert("aaaaaaaa")
-// }
-
-// const buttons = document.querySelectorAll("button"); 
-// buttons.forEach(button => button.addEventListener("click", test))

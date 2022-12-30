@@ -1,3 +1,14 @@
 #container{
     background-color: lightcoral;
 }
+
+#displayDiv{
+    height: 50px;
+    width: 200px;
+    background-color: aquamarine;
+    color: black;
+}
+
+.button{
+    border-radius: 10px;
+}

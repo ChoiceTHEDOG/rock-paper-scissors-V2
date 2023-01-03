@@ -14,31 +14,32 @@ const rock = document.createElement("button");
 rock.textContent = "ROCK";
 rock.classList.add("button")
 rock.addEventListener("click", () => {playRound("rock")});
+mainContainer.appendChild(rock);
 
 const paper = document.createElement("button");
 paper.textContent = "PAPER";
 paper.classList.add("button")
 paper.addEventListener("click", () => {playRound("paper")});
+mainContainer.appendChild(paper);
 
 const scissors = document.createElement("button");
 scissors.textContent = "SCISSORS";
 scissors.classList.add("button")
 scissors.addEventListener("click", () => {playRound("scissors")});
+mainContainer.appendChild(scissors);
+
+// results display 
 
 const displayDiv = document.createElement("div");
 displayDiv.setAttribute("id", "displayDiv");
+mainContainer.insertBefore(displayDiv, rock);
 
 const playerResults = document.createElement("div");
 playerResults.setAttribute("id", "playerResultDiv");
+displayDiv.appendChild(playerResults);
 
 const computerResults = document.createElement("div");
 computerResults.setAttribute("id", "computerResultDiv");
-
-mainContainer.appendChild(rock);
-mainContainer.appendChild(paper);
-mainContainer.appendChild(scissors);
-mainContainer.insertBefore(displayDiv, rock);
-displayDiv.appendChild(playerResults);
 displayDiv.appendChild(computerResults);
 
 // Here we get the computer choice using a random number generator 
@@ -75,30 +76,34 @@ function playRound(playerSelection, computerSelection = ComputerChoice()) {
     } else if(playerSelection == "rock" && computerSelection == "scissors") {
         playerScore++;
         updatePlayerResults();
+        winner();
         return "You Win!!! Rock beats Scissors"
     } else if(playerSelection == "rock" && computerSelection == "paper") {
         computerScore++;
         updateComputerResults();
+        winner();
         return "The computer Wins :( Paper beats Rock"
     } else if(playerSelection == "paper" && computerSelection == "rock") {
         playerScore++;
         updatePlayerResults();
+        winner();
         return "You Win!!! Paper beats Rock"
     } else if(playerSelection == "paper" && computerSelection == "scissors") {
         computerScore++;
         updateComputerResults();
+        winner();
         return "The computer Wins :(. Scissors beats paper"
     } else if(playerSelection == "scissors" && computerSelection == "paper") {
         playerScore++;
         updatePlayerResults();
+        winner();
         return "You Win!!! Scissors beats Paper"
     } else if(playerSelection == "scissors" && computerSelection == "rock") {
         computerScore++;
         updateComputerResults();
+        winner();
         return "The computer Wins :( Rock beats paper"
-    } else {
-        return "invalid selection"
-    }
+    } 
 }
 
 // decide who wins
@@ -108,5 +113,5 @@ function winner(){
         alert("The player wins!!!") 
     } else if(computerScore == 5) {
         alert("The computer wins!!!")
-    }
+    } 
 }

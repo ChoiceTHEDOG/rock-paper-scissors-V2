@@ -9,6 +9,11 @@
     color: black;
 }
 
+.finalResultDiv{
+    background-color: yellow;
+}
+
 .button{
     border-radius: 10px;
 }
+

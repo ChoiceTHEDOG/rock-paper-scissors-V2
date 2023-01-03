@@ -29,10 +29,10 @@ const displayDiv = document.createElement("div");
 displayDiv.setAttribute("id", "displayDiv");
 
 const playerResults = document.createElement("div");
-playerResults.setAttribute("class", "finalResultDiv");
+playerResults.setAttribute("id", "playerResultDiv");
 
 const computerResults = document.createElement("div");
-computerResults.setAttribute("class", "finalResultDiv");
+computerResults.setAttribute("id", "computerResultDiv");
 
 mainContainer.appendChild(rock);
 mainContainer.appendChild(paper);
@@ -71,7 +71,7 @@ updatePlayerResults();
 function playRound(playerSelection, computerSelection = ComputerChoice()) {
     numForSelection = Math.floor(Math.random() * 100) + 1;
     if(playerSelection == computerSelection) {
-        return "Its a Tie"
+        alert("Its a Tie");
     } else if(playerSelection == "rock" && computerSelection == "scissors") {
         playerScore++;
         updatePlayerResults();
@@ -101,15 +101,12 @@ function playRound(playerSelection, computerSelection = ComputerChoice()) {
     }
 }
 
-function game(){
-    do {
-        playRound();
-    } while (playerScore < 5 || computerScore < 5);
-    if(playerScore > computerScore){
-        return `The Player wins whit " + ${playerScore} + " points!!!`;
-       } else if (playerScore < computerScore) {
-        return `The Computer wins whit " + ${computerScore} + " points!!!`;
-       } else {
-        return "Its a Tie"
-       }
+// decide who wins
+
+function winner(){
+    if(playerScore == 5) {
+        alert("The player wins!!!") 
+    } else if(computerScore == 5) {
+        alert("The computer wins!!!")
+    }
 }

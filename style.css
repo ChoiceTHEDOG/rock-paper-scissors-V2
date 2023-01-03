@@ -1,5 +1,5 @@
 #container{
-    background-color: lightcoral;
+    background-color: moccasin;
 }
 
 #displayDiv{
@@ -9,8 +9,12 @@
     color: black;
 }
 
-.finalResultDiv{
-    background-color: yellow;
+#playerResultDiv{
+    background-color: blue;
+}
+
+#computerResultDiv{
+    background-color: red   ;
 }
 
 .button{

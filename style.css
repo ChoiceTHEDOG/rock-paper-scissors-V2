@@ -1,23 +1,57 @@
+*{
+    background-color: lightgoldenrodyellow;
+}
+
 #container{
-    background-color: moccasin;
+    margin: auto;
+
+    height: 500px;
+    width: 500px;
+
+    border: 2px solid black;
 }
 
 #displayDiv{
-    height: 50px;
-    width: 200px;
-    background-color: aquamarine;
+    background-color: white;
     color: black;
+
+    display: flex;  
+    justify-content: space-between;
+
+    margin-bottom: 100px;
+}
+
+.viewDivs{
+    width: 140px;
+    height: 300px;
+    margin: 0;
+    background-color: lightgoldenrodyellow;    
 }
 
 #playerResultDiv{
-    background-color: blue;
+    background-color: palegreen;
+}
+
+#winnerDisplay{
+    background-color: palevioletred;
 }
 
 #computerResultDiv{
-    background-color: red   ;
+    background-color: paleturquoise;
 }
 
-.button{
+#buttonContainer{
+    margin: 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    border: 2px solid darkslategray;
+}
+
+.buttons{
     border-radius: 10px;
+
+    font-size: large;
 }
 
